@@ -49,7 +49,7 @@ const App = () => {
     <NavigationContainer>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <AppScrollView>
+        <AppScrollView contentInsetAdjustmentBehavior="automatic">
           <Header />
           {global.HermesInternal == null ? null : (
             <EngineText>
