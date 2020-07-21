@@ -31,3 +31,5 @@ Bracket spacing to true.
 Grab Header from NewAppScreen, no Typescript, refactor colors.
 
 ScrollView to AppScrollView with styled-components.
+
+... I forgot to log a bunch of steps. Seems to work! There are a couple issues open. Next step testing navigation.
