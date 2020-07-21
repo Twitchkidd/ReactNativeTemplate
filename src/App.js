@@ -2,7 +2,15 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import styled from 'styled-components/native';
 import { SafeAreaView, StatusBar } from 'react-native';
-import { AppScrollView, Container, Header, Highlight } from './components';
+import {
+  AppScrollView,
+  Container,
+  DebugInstructions,
+  Header,
+  Highlight,
+  LearnMoreLinks,
+  ReloadInstructions,
+} from './components';
 import { white, dark, black } from './utils';
 
 const EngineText = styled.Text`
@@ -35,12 +43,6 @@ const SectionDescription = styled.Text`
   font-weight: 400;
   color: ${dark};
 `;
-
-import {
-  LearnMoreLinks,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
   return (
