@@ -1,8 +1,49 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import styled from 'styled-components/native';
 import { SafeAreaView, StyleSheet, View, Text, StatusBar } from 'react-native';
 import { AppScrollView, Header } from './components';
 import { white, dark, black } from './utils';
+
+const EngineText = styled.Text`
+  position: absolute;
+  right: 0;
+`;
+
+const EngineTextFooter = styled.Text`
+  color: ${dark};
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px;
+  padding-right: 12px;
+  text-align: right;
+`;
+
+const Body = styled.View`
+  background-color: ${white};
+`;
+
+const SectionContainer = styled.View`
+  margin-top: 32px;
+  padding: 0 24px 0 24px;
+`;
+
+const SectionTitle = styled.Text`
+  font-size: 24px;
+  font-weight: 600;
+  color: ${black};
+`;
+
+const SectionDescription = styled.Text`
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 400;
+  color: ${dark};
+`;
+
+const SectionDescriptionHighlight = styled.Text`
+  font-weight: 700;
+`;
 
 import {
   LearnMoreLinks,
@@ -18,78 +59,45 @@ const App = () => {
         <AppScrollView>
           <Header />
           {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
+            <EngineText>
+              <EngineTextFooter>Engine: Hermes</EngineTextFooter>
+            </EngineText>
           )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
+          <Body>
+            <SectionContainer>
+              <SectionTitle>Step One</SectionTitle>
+              <SectionDescription>
+                Edit{' '}
+                <SectionDescriptionHighlight>
+                  App.js
+                </SectionDescriptionHighlight>{' '}
+                to change this screen and then come back to see your edits.
+              </SectionDescription>
+            </SectionContainer>
+            <SectionContainer>
+              <SectionTitle>See Your Changes</SectionTitle>
+              <SectionDescription>
                 <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
+              </SectionDescription>
+            </SectionContainer>
+            <SectionContainer>
+              <SectionTitle>Debug</SectionTitle>
+              <SectionDescription>
                 <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
+              </SectionDescription>
+            </SectionContainer>
+            <SectionContainer>
+              <SectionTitle>Learn More</SectionTitle>
+              <SectionDescription>
                 Read the docs to discover what to do next:
-              </Text>
-            </View>
+              </SectionDescription>
+            </SectionContainer>
             <LearnMoreLinks />
-          </View>
+          </Body>
         </AppScrollView>
       </SafeAreaView>
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
 
 export default App;
