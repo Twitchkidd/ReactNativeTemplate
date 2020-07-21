@@ -1,19 +1,8 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @flow strict-local
- * @format
- */
-
-'use strict';
-import Colors from './Colors';
-import type { Node } from 'react';
-import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
+import { Text, StyleSheet } from 'react-native';
+import { Container } from './Container';
+import { dark, light, primary } from '../utils';
+import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
 
 const links = [
   {
@@ -70,54 +59,49 @@ const links = [
   },
 ];
 
-const LinkList = (): Node => (
-  <View style={styles.container}>
+const Separator = styled.View`
+  background-color: ${light};
+  height: 1px;
+`;
+
+const LinkContainer = styled.TouchableOpacity`
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+`;
+
+export const LearnMoreLinks = () => (
+  <Container>
     {links.map(({ id, title, link, description }) => {
       return (
         <React.Fragment key={id}>
-          <View style={styles.separator} />
-          <TouchableOpacity
+          <Separator />
+          <LinkContainer
             accessibilityRole={'button'}
-            onPress={() => openURLInBrowser(link)}
-            style={styles.linkContainer}>
+            onPress={() => openURLInBrowser(link)}>
             <Text style={styles.link}>{title}</Text>
             <Text style={styles.description}>{description}</Text>
-          </TouchableOpacity>
+          </LinkContainer>
         </React.Fragment>
       );
     })}
-  </View>
+  </Container>
 );
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  linkContainer: {
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: 8,
-  },
   link: {
     flex: 2,
     fontSize: 18,
     fontWeight: '400',
-    color: Colors.primary,
+    color: primary,
   },
   description: {
     flex: 3,
     paddingVertical: 16,
     fontWeight: '400',
     fontSize: 18,
-    color: Colors.dark,
-  },
-  separator: {
-    backgroundColor: Colors.light,
-    height: 1,
+    color: dark,
   },
 });
-
-export default LinkList;

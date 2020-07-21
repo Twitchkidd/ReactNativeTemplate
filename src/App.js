@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import styled from 'styled-components/native';
-import { SafeAreaView, StyleSheet, View, Text, StatusBar } from 'react-native';
-import { AppScrollView, Header } from './components';
+import { SafeAreaView, StatusBar } from 'react-native';
+import { AppScrollView, Container, Header, Highlight } from './components';
 import { white, dark, black } from './utils';
 
 const EngineText = styled.Text`
@@ -23,11 +23,6 @@ const Body = styled.View`
   background-color: ${white};
 `;
 
-const SectionContainer = styled.View`
-  margin-top: 32px;
-  padding: 0 24px 0 24px;
-`;
-
 const SectionTitle = styled.Text`
   font-size: 24px;
   font-weight: 600;
@@ -39,10 +34,6 @@ const SectionDescription = styled.Text`
   font-size: 18px;
   font-weight: 400;
   color: ${dark};
-`;
-
-const SectionDescriptionHighlight = styled.Text`
-  font-weight: 700;
 `;
 
 import {
@@ -64,34 +55,31 @@ const App = () => {
             </EngineText>
           )}
           <Body>
-            <SectionContainer>
+            <Container>
               <SectionTitle>Step One</SectionTitle>
               <SectionDescription>
-                Edit{' '}
-                <SectionDescriptionHighlight>
-                  App.js
-                </SectionDescriptionHighlight>{' '}
-                to change this screen and then come back to see your edits.
+                Edit <Highlight>App.js</Highlight> to change this screen and
+                then come back to see your edits.
               </SectionDescription>
-            </SectionContainer>
-            <SectionContainer>
+            </Container>
+            <Container>
               <SectionTitle>See Your Changes</SectionTitle>
               <SectionDescription>
                 <ReloadInstructions />
               </SectionDescription>
-            </SectionContainer>
-            <SectionContainer>
+            </Container>
+            <Container>
               <SectionTitle>Debug</SectionTitle>
               <SectionDescription>
                 <DebugInstructions />
               </SectionDescription>
-            </SectionContainer>
-            <SectionContainer>
+            </Container>
+            <Container>
               <SectionTitle>Learn More</SectionTitle>
               <SectionDescription>
                 Read the docs to discover what to do next:
               </SectionDescription>
-            </SectionContainer>
+            </Container>
             <LearnMoreLinks />
           </Body>
         </AppScrollView>
