@@ -1,15 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-import { Header } from './components';
-import { white, lighter, dark, black } from './utils';
+import { SafeAreaView, StyleSheet, View, Text, StatusBar } from 'react-native';
+import { AppScrollView, Header } from './components';
+import { white, dark, black } from './utils';
 
 import {
   LearnMoreLinks,
@@ -22,9 +15,7 @@ const App = () => {
     <NavigationContainer>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
+        <AppScrollView>
           <Header />
           {global.HermesInternal == null ? null : (
             <View style={styles.engine}>
@@ -59,16 +50,13 @@ const App = () => {
             </View>
             <LearnMoreLinks />
           </View>
-        </ScrollView>
+        </AppScrollView>
       </SafeAreaView>
     </NavigationContainer>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: lighter,
-  },
   engine: {
     position: 'absolute',
     right: 0,

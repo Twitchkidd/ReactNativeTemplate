@@ -29,3 +29,5 @@ Colors refactor to utils.
 Bracket spacing to true.
 
 Grab Header from NewAppScreen, no Typescript, refactor colors.
+
+ScrollView to AppScrollView with styled-components.
