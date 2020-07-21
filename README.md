@@ -23,3 +23,7 @@ App in /src.
 No Typescript.
 
 Wrap in NavigationContainer.
+
+Colors refactor to utils.
+
+Bracket spacing to true.
