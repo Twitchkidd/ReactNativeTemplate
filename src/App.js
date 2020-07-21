@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import {
   SafeAreaView,
   StyleSheet,
@@ -8,11 +8,10 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-
-import {white, lighter, dark, black} from './utils';
+import { Header } from './components';
+import { white, lighter, dark, black } from './utils';
 
 import {
-  Header,
   LearnMoreLinks,
   DebugInstructions,
   ReloadInstructions,
