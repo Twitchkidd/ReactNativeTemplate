@@ -1,24 +1,30 @@
 import React from 'react';
+import styled from 'styled-components/native';
 import { Text, StyleSheet, ImageBackground } from 'react-native';
 import { black, lighter } from '../utils';
 
+const StyledImageBackground = styled.ImageBackground`
+  padding: 96px 32px 40px 32px;
+  background-color: ${lighter};
+`;
+
+const StyledText = styled.Text`
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  color: ${black};
+`;
+
 export const Header = () => (
-  <ImageBackground
+  <StyledImageBackground
     accessibilityRole={'image'}
     source={require('../assets/logo.png')}
-    style={styles.background}
     imageStyle={styles.logo}>
-    <Text style={styles.text}>Welcome to React</Text>
-  </ImageBackground>
+    <StyledText>Welcome to React</StyledText>
+  </StyledImageBackground>
 );
 
 const styles = StyleSheet.create({
-  background: {
-    paddingBottom: 40,
-    paddingTop: 96,
-    paddingHorizontal: 32,
-    backgroundColor: lighter,
-  },
   logo: {
     opacity: 0.2,
     overflow: 'visible',
@@ -31,11 +37,5 @@ const styles = StyleSheet.create({
      */
     marginLeft: -128,
     marginBottom: -192,
-  },
-  text: {
-    fontSize: 40,
-    fontWeight: '600',
-    textAlign: 'center',
-    color: black,
   },
 });
