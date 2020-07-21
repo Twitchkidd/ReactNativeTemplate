@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 import { Container } from './Container';
 import { dark, light, primary } from '../utils';
 import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, Text } from 'react-native';
+import { Platform, Text } from 'react-native';
 import { Highlight } from './Highlight';
 
 export const DebugInstructions = Platform.select({

@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
 
-export const Hightlight = styled.Text`
+export const Highlight = styled.Text`
   font-weight: 700;
 `;
