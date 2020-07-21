@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { Text, StyleSheet, ImageBackground } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { black, lighter } from '../utils';
 
 const StyledImageBackground = styled.ImageBackground`
